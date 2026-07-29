@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+openai
+python-dotenv
+pandas
+sqlparse
+streamlit
+requests
+pydantic
+instructor
+sqlparse
+types-requests

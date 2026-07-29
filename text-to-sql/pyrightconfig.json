@@ -1,0 +1,8 @@
+{
+    "venvPath": ".",
+    "venv": "textToSql",
+    "pythonVersion": "3.13",
+    "extraPaths": [
+        "textToSql/lib/python3.13/site-packages"
+    ]
+}

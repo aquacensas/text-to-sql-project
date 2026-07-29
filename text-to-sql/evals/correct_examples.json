@@ -1,0 +1,7 @@
+[
+ {
+  "question": "how many orders are pending?",
+  "sql": "SELECT COUNT(*) AS total_pending_orders FROM orders WHERE status = 'pending' LIMIT 100",
+  "timestamp": "2026-07-24 10:27:03"
+ }
+]

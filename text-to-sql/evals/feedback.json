@@ -1,0 +1,10 @@
+[
+ {
+  "query_id": "94b6a743-c779-4bb8-818a-a5df53a94fd4",
+  "question": "how many orders are pending?",
+  "sql": "SELECT COUNT(*) AS total_pending_orders FROM orders WHERE status = 'pending' LIMIT 100",
+  "is_correct": true,
+  "feedback_note": null,
+  "timestamp": "2026-07-24 10:27:03"
+ }
+]
