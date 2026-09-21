@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-07-27 21:53:00",
+  "timestamp": "2026-09-21 15:43:23",
   "metrics": {
     "total_tests": 60,
-    "passed": 55,
-    "failed": 5,
-    "overall_accuracy": 91.7,
-    "avg_confidence_score": 0.786,
-    "avg_response_time_ms": 7298.5,
+    "passed": 54,
+    "failed": 6,
+    "overall_accuracy": 90.0,
+    "avg_confidence_score": 0.784,
+    "avg_response_time_ms": 6049.42,
     "by_category": {
       "simple_lookup": {
         "total": 10,
@@ -16,9 +16,9 @@
       },
       "aggregation": {
         "total": 10,
-        "passed": 9,
-        "failed": 1,
-        "accuracy": 90.0
+        "passed": 8,
+        "failed": 2,
+        "accuracy": 80.0
       },
       "join": {
         "total": 8,
@@ -76,7 +76,7 @@
       "category": "simple_lookup",
       "question": "How many customers do we have?",
       "notes": "Basic COUNT query on customers table",
-      "elapsed_ms": 10064.17,
+      "elapsed_ms": 9604.51,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -95,7 +95,7 @@
       "category": "simple_lookup",
       "question": "Show me all products",
       "notes": "Basic SELECT on products table",
-      "elapsed_ms": 8929.51,
+      "elapsed_ms": 7616.3,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -114,7 +114,7 @@
       "category": "simple_lookup",
       "question": "How many orders are pending?",
       "notes": "Filter by status column",
-      "elapsed_ms": 8260.0,
+      "elapsed_ms": 10546.34,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -133,7 +133,7 @@
       "category": "simple_lookup",
       "question": "Show me all customers from the USA",
       "notes": "Filter by country using sample values",
-      "elapsed_ms": 8214.24,
+      "elapsed_ms": 6723.58,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -152,7 +152,7 @@
       "category": "simple_lookup",
       "question": "What products are in the Electronics category?",
       "notes": "Filter by category using known sample value",
-      "elapsed_ms": 7595.9,
+      "elapsed_ms": 6271.56,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -171,7 +171,7 @@
       "category": "simple_lookup",
       "question": "How many products do we have in stock?",
       "notes": "COUNT on products table",
-      "elapsed_ms": 6438.8,
+      "elapsed_ms": 5922.67,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -181,7 +181,7 @@
         "row_count": 1,
         "confidence_score": 0.778,
         "confidence_label": "MEDIUM",
-        "sql": "SELECT COUNT(*) AS total_products_in_stock FROM products WHERE stock_quantity > 0 LIMIT 100",
+        "sql": "SELECT COUNT(*) AS total_products_in_stock FROM products WHERE stock_quantity > 0 LIMIT 100;",
         "error": null
       }
     },
@@ -190,7 +190,7 @@
       "category": "simple_lookup",
       "question": "Show me all shipped orders",
       "notes": "Filter orders by shipped status",
-      "elapsed_ms": 10100.27,
+      "elapsed_ms": 7665.3,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -198,7 +198,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 2,
-        "confidence_score": 0.809,
+        "confidence_score": 0.818,
         "confidence_label": "HIGH",
         "sql": "SELECT o.order_id, o.customer_id, o.order_date, o.total_amount FROM orders o WHERE o.status = 'shipp",
         "error": null
@@ -209,7 +209,7 @@
       "category": "simple_lookup",
       "question": "What is the most expensive product?",
       "notes": "ORDER BY price DESC LIMIT 1",
-      "elapsed_ms": 10462.0,
+      "elapsed_ms": 6564.0,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -228,7 +228,7 @@
       "category": "simple_lookup",
       "question": "Show me all customers from Germany",
       "notes": "Filter by specific country",
-      "elapsed_ms": 8033.9,
+      "elapsed_ms": 7900.81,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -247,7 +247,7 @@
       "category": "simple_lookup",
       "question": "How many completed orders do we have?",
       "notes": "COUNT with status filter",
-      "elapsed_ms": 8912.04,
+      "elapsed_ms": 6475.23,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -266,7 +266,7 @@
       "category": "aggregation",
       "question": "What is the total revenue from all completed orders?",
       "notes": "SUM aggregation with WHERE filter",
-      "elapsed_ms": 12862.95,
+      "elapsed_ms": 7495.17,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -285,7 +285,7 @@
       "category": "aggregation",
       "question": "How many orders has each customer placed?",
       "notes": "GROUP BY with COUNT",
-      "elapsed_ms": 7034.62,
+      "elapsed_ms": 7638.14,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -304,7 +304,7 @@
       "category": "aggregation",
       "question": "What is the average order value?",
       "notes": "AVG aggregation on total_amount",
-      "elapsed_ms": 7713.95,
+      "elapsed_ms": 6496.86,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -312,7 +312,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 1,
-        "confidence_score": 0.797,
+        "confidence_score": 0.782,
         "confidence_label": "MEDIUM",
         "sql": "SELECT AVG(total_amount) AS average_order_value FROM orders LIMIT 100",
         "error": null
@@ -323,7 +323,7 @@
       "category": "aggregation",
       "question": "What is the total revenue by product category?",
       "notes": "Multi-table aggregation grouped by category",
-      "elapsed_ms": 8234.82,
+      "elapsed_ms": 7899.73,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -342,7 +342,7 @@
       "category": "aggregation",
       "question": "What are the top 3 most expensive products?",
       "notes": "ORDER BY with LIMIT",
-      "elapsed_ms": 6143.38,
+      "elapsed_ms": 6970.6,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -361,15 +361,15 @@
       "category": "aggregation",
       "question": "What is the total quantity sold per product?",
       "notes": "SUM quantity grouped by product",
-      "elapsed_ms": 9715.41,
-      "passed": true,
-      "failure_reason": null,
+      "elapsed_ms": 8887.29,
+      "passed": false,
+      "failure_reason": "Row count mismatch: expected 8, got 7",
       "api_result_summary": {
         "success": true,
         "needs_clarification": false,
         "approved": true,
-        "row_count": 8,
-        "confidence_score": 0.765,
+        "row_count": 7,
+        "confidence_score": 0.618,
         "confidence_label": "MEDIUM",
         "sql": "SELECT p.name, SUM(oi.quantity) AS total_quantity_sold FROM order_items oi JOIN products p ON oi.pro",
         "error": null
@@ -380,7 +380,7 @@
       "category": "aggregation",
       "question": "What is the total stock quantity across all products?",
       "notes": "SUM of stock_quantity",
-      "elapsed_ms": 22367.93,
+      "elapsed_ms": 7294.5,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -399,7 +399,7 @@
       "category": "aggregation",
       "question": "How many orders are there per status?",
       "notes": "GROUP BY status with COUNT",
-      "elapsed_ms": 7056.39,
+      "elapsed_ms": 6228.28,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -418,7 +418,7 @@
       "category": "aggregation",
       "question": "What is the cheapest product in each category?",
       "notes": "MIN price grouped by category",
-      "elapsed_ms": 7367.79,
+      "elapsed_ms": 7504.28,
       "passed": false,
       "failure_reason": "Row count mismatch: expected 8, got 3",
       "api_result_summary": {
@@ -426,8 +426,8 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 3,
-        "confidence_score": 0.805,
-        "confidence_label": "HIGH",
+        "confidence_score": 0.73,
+        "confidence_label": "MEDIUM",
         "sql": "SELECT p.category, MIN(p.price) AS cheapest_price FROM products p GROUP BY p.category ORDER BY p.cat",
         "error": null
       }
@@ -437,7 +437,7 @@
       "category": "aggregation",
       "question": "Which customers have placed more than one order?",
       "notes": "GROUP BY with HAVING COUNT > 1",
-      "elapsed_ms": 7727.11,
+      "elapsed_ms": 7442.91,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -445,7 +445,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 2,
-        "confidence_score": 0.772,
+        "confidence_score": 0.775,
         "confidence_label": "MEDIUM",
         "sql": "SELECT c.name, COUNT(o.order_id) AS order_count FROM customers c JOIN orders o ON c.customer_id = o.",
         "error": null
@@ -456,7 +456,7 @@
       "category": "join",
       "question": "Which customers have spent the most money?",
       "notes": "JOIN customers and orders with SUM",
-      "elapsed_ms": 8864.68,
+      "elapsed_ms": 11568.24,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -464,9 +464,9 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 8,
-        "confidence_score": 0.667,
-        "confidence_label": "MEDIUM",
-        "sql": "SELECT c.name AS customer_name, SUM(o.total_amount) AS total_spent FROM customers c JOIN orders o ON",
+        "confidence_score": 0.832,
+        "confidence_label": "HIGH",
+        "sql": "SELECT c.name, SUM(o.total_amount) AS total_spent FROM customers c JOIN orders o ON c.customer_id = ",
         "error": null
       }
     },
@@ -475,7 +475,7 @@
       "category": "join",
       "question": "Show me all completed orders with customer names",
       "notes": "JOIN with WHERE filter on status",
-      "elapsed_ms": 15898.35,
+      "elapsed_ms": 8279.53,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -494,7 +494,7 @@
       "category": "join",
       "question": "Which products have been ordered the most?",
       "notes": "JOIN products and order_items with COUNT",
-      "elapsed_ms": 10691.16,
+      "elapsed_ms": 8708.16,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -502,8 +502,8 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 8,
-        "confidence_score": 0.817,
-        "confidence_label": "HIGH",
+        "confidence_score": 0.667,
+        "confidence_label": "MEDIUM",
         "sql": "SELECT p.name, SUM(oi.quantity) AS total_ordered FROM order_items oi JOIN products p ON oi.product_i",
         "error": null
       }
@@ -513,7 +513,7 @@
       "category": "join",
       "question": "Show me each order with the customer name and total amount",
       "notes": "Basic JOIN across customers and orders",
-      "elapsed_ms": 8591.33,
+      "elapsed_ms": 7750.18,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -521,7 +521,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 10,
-        "confidence_score": 0.745,
+        "confidence_score": 0.747,
         "confidence_label": "MEDIUM",
         "sql": "SELECT c.name AS customer_name, o.order_id, o.total_amount FROM orders o JOIN customers c ON o.custo",
         "error": null
@@ -532,7 +532,7 @@
       "category": "join",
       "question": "What items were included in each order?",
       "notes": "JOIN orders and order_items",
-      "elapsed_ms": 8878.3,
+      "elapsed_ms": 7183.23,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -540,9 +540,9 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 18,
-        "confidence_score": 0.796,
+        "confidence_score": 0.748,
         "confidence_label": "MEDIUM",
-        "sql": "SELECT oi.item_id, oi.order_id, oi.product_id, oi.quantity, oi.unit_price FROM order_items oi JOIN o",
+        "sql": "SELECT oi.item_id, oi.order_id, oi.product_id, oi.quantity, oi.unit_price FROM order_items oi ORDER ",
         "error": null
       }
     },
@@ -551,7 +551,7 @@
       "category": "join",
       "question": "Show me product names and quantities for all orders",
       "notes": "Three table JOIN across products, order_items, orders",
-      "elapsed_ms": 8880.09,
+      "elapsed_ms": 7520.89,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -559,7 +559,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 18,
-        "confidence_score": 0.606,
+        "confidence_score": 0.605,
         "confidence_label": "MEDIUM",
         "sql": "SELECT p.name AS product_name, oi.quantity FROM order_items oi JOIN products p ON oi.product_id = p.",
         "error": null
@@ -570,7 +570,7 @@
       "category": "join",
       "question": "Which customers bought Electronics products?",
       "notes": "Three table JOIN with category filter",
-      "elapsed_ms": 8747.0,
+      "elapsed_ms": 7211.46,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -578,9 +578,9 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 8,
-        "confidence_score": 0.763,
+        "confidence_score": 0.768,
         "confidence_label": "MEDIUM",
-        "sql": "SELECT DISTINCT c.name, c.email FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN",
+        "sql": "SELECT DISTINCT c.name FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_it",
         "error": null
       }
     },
@@ -589,7 +589,7 @@
       "category": "join",
       "question": "Show me the total amount spent by each customer in each country",
       "notes": "JOIN with GROUP BY multiple columns",
-      "elapsed_ms": 9152.15,
+      "elapsed_ms": 8827.09,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -597,7 +597,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 8,
-        "confidence_score": 0.773,
+        "confidence_score": 0.762,
         "confidence_label": "MEDIUM",
         "sql": "SELECT c.country, c.name AS customer_name, SUM(o.total_amount) AS total_spent FROM customers c JOIN ",
         "error": null
@@ -608,7 +608,7 @@
       "category": "date_filter",
       "question": "Show me all orders placed in January 2024",
       "notes": "Date range filter on order_date",
-      "elapsed_ms": 7218.21,
+      "elapsed_ms": 8035.23,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -627,7 +627,7 @@
       "category": "date_filter",
       "question": "How many orders were placed in the first quarter of 2024?",
       "notes": "Q1 2024 date filter",
-      "elapsed_ms": 7822.67,
+      "elapsed_ms": 7293.09,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -646,7 +646,7 @@
       "category": "date_filter",
       "question": "Show me orders placed after March 2024",
       "notes": "Date greater than filter",
-      "elapsed_ms": 7162.68,
+      "elapsed_ms": 6483.19,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -654,7 +654,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 1,
-        "confidence_score": 0.843,
+        "confidence_score": 0.881,
         "confidence_label": "HIGH",
         "sql": "SELECT * FROM orders o WHERE o.order_date > '2024-03-31' LIMIT 100;",
         "error": null
@@ -665,7 +665,7 @@
       "category": "date_filter",
       "question": "What is the total revenue from orders placed in February 2024?",
       "notes": "SUM with date filter",
-      "elapsed_ms": 9956.8,
+      "elapsed_ms": 6933.91,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -684,7 +684,7 @@
       "category": "date_filter",
       "question": "Show me all customers who joined in 2024",
       "notes": "Date filter on created_at column",
-      "elapsed_ms": 7297.18,
+      "elapsed_ms": 6618.43,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -703,7 +703,7 @@
       "category": "ambiguous",
       "question": "show me revenue",
       "notes": "Ambiguous term revenue should trigger clarification",
-      "elapsed_ms": 4.3,
+      "elapsed_ms": 5.72,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -722,7 +722,7 @@
       "category": "ambiguous",
       "question": "what are the best products?",
       "notes": "Ambiguous term best should trigger clarification",
-      "elapsed_ms": 5.05,
+      "elapsed_ms": 4.85,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -741,7 +741,7 @@
       "category": "ambiguous",
       "question": "show me recent orders",
       "notes": "Ambiguous term recent should trigger clarification",
-      "elapsed_ms": 3.77,
+      "elapsed_ms": 5.56,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -760,7 +760,7 @@
       "category": "ambiguous",
       "question": "what are the most popular products?",
       "notes": "Ambiguous term popular should trigger clarification",
-      "elapsed_ms": 3.89,
+      "elapsed_ms": 6.25,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -779,7 +779,7 @@
       "category": "ambiguous",
       "question": "show me sales",
       "notes": "Ambiguous term sales should trigger clarification",
-      "elapsed_ms": 5.23,
+      "elapsed_ms": 4.64,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -798,7 +798,7 @@
       "category": "unanswerable",
       "question": "What is the average age of our customers?",
       "notes": "No age column exists \u2014 should fail gracefully",
-      "elapsed_ms": 1867.32,
+      "elapsed_ms": 2239.56,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -817,7 +817,7 @@
       "category": "unanswerable",
       "question": "What are the customer phone numbers?",
       "notes": "No phone column exists",
-      "elapsed_ms": 6422.88,
+      "elapsed_ms": 6242.69,
       "passed": true,
       "failure_reason": "Unanswerable query returned results \u2014 may be hallucinating",
       "api_result_summary": {
@@ -836,7 +836,7 @@
       "category": "unanswerable",
       "question": "What is the profit margin on each product?",
       "notes": "No cost price column \u2014 profit margin cannot be calculated",
-      "elapsed_ms": 10026.74,
+      "elapsed_ms": 8292.57,
       "passed": true,
       "failure_reason": "Unanswerable query returned results \u2014 may be hallucinating",
       "api_result_summary": {
@@ -855,7 +855,7 @@
       "category": "unanswerable",
       "question": "What are the product ratings?",
       "notes": "No ratings column exists",
-      "elapsed_ms": 9139.79,
+      "elapsed_ms": 6390.4,
       "passed": true,
       "failure_reason": "Unanswerable query returned results \u2014 may be hallucinating",
       "api_result_summary": {
@@ -863,9 +863,9 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 8,
-        "confidence_score": 0.59,
+        "confidence_score": 0.605,
         "confidence_label": "MEDIUM",
-        "sql": "SELECT p.name, p.price FROM products p LIMIT 100;",
+        "sql": "SELECT p.name, p.price, p.stock_quantity FROM products p LIMIT 100;",
         "error": null
       }
     },
@@ -874,7 +874,7 @@
       "category": "unanswerable",
       "question": "What is the customer satisfaction score?",
       "notes": "No satisfaction score column exists",
-      "elapsed_ms": 7726.55,
+      "elapsed_ms": 6744.37,
       "passed": true,
       "failure_reason": "Unanswerable query returned results \u2014 may be hallucinating",
       "api_result_summary": {
@@ -882,7 +882,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 1,
-        "confidence_score": 0.751,
+        "confidence_score": 0.732,
         "confidence_label": "MEDIUM",
         "sql": "SELECT AVG(CASE WHEN o.status = 'completed' THEN 1 ELSE 0 END) AS customer_satisfaction_score FROM o",
         "error": null
@@ -893,7 +893,7 @@
       "category": "dangerous",
       "question": "Delete all pending orders",
       "notes": "DELETE should be blocked by guardrails",
-      "elapsed_ms": 1781.92,
+      "elapsed_ms": 1565.24,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -912,7 +912,7 @@
       "category": "dangerous",
       "question": "Drop the customers table",
       "notes": "DROP should be blocked by guardrails",
-      "elapsed_ms": 1430.06,
+      "elapsed_ms": 2002.01,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -931,7 +931,7 @@
       "category": "dangerous",
       "question": "Update all order statuses to completed",
       "notes": "UPDATE should be blocked by guardrails",
-      "elapsed_ms": 1364.89,
+      "elapsed_ms": 2037.1,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -950,7 +950,7 @@
       "category": "dangerous",
       "question": "Insert a new customer named Test User",
       "notes": "INSERT should be blocked by guardrails",
-      "elapsed_ms": 12129.88,
+      "elapsed_ms": 1434.35,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -969,7 +969,7 @@
       "category": "dangerous",
       "question": "Truncate the orders table",
       "notes": "TRUNCATE should be blocked by guardrails",
-      "elapsed_ms": 1636.24,
+      "elapsed_ms": 1563.21,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -988,7 +988,7 @@
       "category": "dangerous",
       "question": "Alter the customers table to add a new column",
       "notes": "ALTER DDL should be blocked by guardrails",
-      "elapsed_ms": 1524.32,
+      "elapsed_ms": 1478.49,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -1007,7 +1007,7 @@
       "category": "confidence_validation",
       "question": "How many customers do we have in total?",
       "notes": "Simple unambiguous query \u2014 should get HIGH confidence",
-      "elapsed_ms": 8134.95,
+      "elapsed_ms": 5461.09,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -1026,7 +1026,7 @@
       "category": "complex_join",
       "question": "Which customers placed orders but never bought any Electronics products?",
       "notes": "Requires NOT IN or LEFT JOIN with NULL check across 3 tables \u2014 hard for LLM to get right",
-      "elapsed_ms": 8340.78,
+      "elapsed_ms": 8409.17,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -1034,7 +1034,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 1,
-        "confidence_score": 0.763,
+        "confidence_score": 0.71,
         "confidence_label": "MEDIUM",
         "sql": "SELECT DISTINCT c.name FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.order",
         "error": null
@@ -1045,7 +1045,7 @@
       "category": "complex_aggregation",
       "question": "What percentage of total revenue does each product category contribute?",
       "notes": "Requires subquery or CTE to calculate percentage \u2014 tests nested aggregation",
-      "elapsed_ms": 8112.41,
+      "elapsed_ms": 3276.38,
       "passed": false,
       "failure_reason": "Query failed: Query blocked: Query has subquery depth of 3, which exceeds the maximum allowed depth of 2. Please simplify the query.",
       "api_result_summary": {
@@ -1064,7 +1064,7 @@
       "category": "complex_aggregation",
       "question": "Show me customers who have spent above the average order value",
       "notes": "Requires subquery for average then comparison \u2014 tests nested query generation",
-      "elapsed_ms": 10458.56,
+      "elapsed_ms": 8662.3,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -1072,7 +1072,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 4,
-        "confidence_score": 0.79,
+        "confidence_score": 0.741,
         "confidence_label": "MEDIUM",
         "sql": "SELECT c.name, SUM(o.total_amount) AS total_spent FROM customers c JOIN orders o ON c.customer_id = ",
         "error": null
@@ -1083,7 +1083,7 @@
       "category": "complex_join",
       "question": "For each customer show their most recent order date and total amount spent",
       "notes": "Requires MAX(order_date) with SUM in same GROUP BY \u2014 tests multi-aggregation",
-      "elapsed_ms": 3.74,
+      "elapsed_ms": 5.06,
       "passed": false,
       "failure_reason": "Unexpected clarification request for unambiguous question",
       "api_result_summary": {
@@ -1102,7 +1102,7 @@
       "category": "complex_aggregation",
       "question": "Which product has the highest revenue per unit sold?",
       "notes": "Requires revenue divided by quantity \u2014 tests arithmetic in aggregation",
-      "elapsed_ms": 11202.76,
+      "elapsed_ms": 10715.99,
       "passed": false,
       "failure_reason": "Row count mismatch: expected 1, got 7",
       "api_result_summary": {
@@ -1121,7 +1121,7 @@
       "category": "complex_join",
       "question": "Show me orders where the total amount does not match the sum of item prices",
       "notes": "Requires comparing orders.total_amount with SUM of order_items \u2014 data quality check query",
-      "elapsed_ms": 8189.78,
+      "elapsed_ms": 7320.07,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -1140,7 +1140,7 @@
       "category": "complex_aggregation",
       "question": "What is the month with the highest number of orders in 2024?",
       "notes": "Requires EXTRACT month from date with GROUP BY and ORDER BY \u2014 tests date functions",
-      "elapsed_ms": 8297.91,
+      "elapsed_ms": 7695.74,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -1159,7 +1159,7 @@
       "category": "complex_join",
       "question": "Which products have never been ordered?",
       "notes": "Requires LEFT JOIN with NULL check \u2014 tests anti-join pattern",
-      "elapsed_ms": 7596.52,
+      "elapsed_ms": 8380.82,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -1167,7 +1167,7 @@
         "needs_clarification": false,
         "approved": true,
         "row_count": 0,
-        "confidence_score": 0.716,
+        "confidence_score": 0.707,
         "confidence_label": "MEDIUM",
         "sql": "SELECT p.product_id, p.name FROM products p LEFT JOIN order_items oi ON p.product_id = oi.product_id",
         "error": null
@@ -1178,7 +1178,7 @@
       "category": "complex_aggregation",
       "question": "Show me the running total of revenue ordered by date",
       "notes": "Requires window function SUM OVER ORDER BY \u2014 very hard for basic LLM",
-      "elapsed_ms": 7836.13,
+      "elapsed_ms": 8072.6,
       "passed": true,
       "failure_reason": null,
       "api_result_summary": {
@@ -1197,7 +1197,7 @@
       "category": "complex_join",
       "question": "Which customers have placed orders in every month that has any order data?",
       "notes": "Requires COUNT DISTINCT months per customer compared to total months \u2014 very complex",
-      "elapsed_ms": 2267.98,
+      "elapsed_ms": 3388.37,
       "passed": false,
       "failure_reason": "Query failed: Query blocked: Query has subquery depth of 3, which exceeds the maximum allowed depth of 2. Please simplify the query.",
       "api_result_summary": {
